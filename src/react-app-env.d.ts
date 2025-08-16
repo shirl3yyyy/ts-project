@@ -1,7 +1,11 @@
 // src/react-app-env.d.ts
 declare module '*.svg' {
-  import React = require('react');
-  export const ReactComponent: React.FC<React.SVGProps<SVGSVGElement>>;
-  const src: string;
-  export default src;
+  const content: string;
+  export default content;
+}
+
+declare module '*.svg?react' {
+  import { ReactComponent as ReactComponentType } from 'react';
+  const ReactComponent: ReactComponentType;
+  export { ReactComponent };
 }
